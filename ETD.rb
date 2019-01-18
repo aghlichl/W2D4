@@ -1,5 +1,6 @@
 require 'byebug'
 def my_min(arr)
+    #O(n^2)
     arr.each do |el|
         smallest = true
         arr.each do |el2|
@@ -10,6 +11,7 @@ def my_min(arr)
 end 
 
 def my_min2(arr)
+    #O(n)
     arr.reduce do |smallest, el|
         if el < smallest
             el
@@ -20,6 +22,7 @@ def my_min2(arr)
 end 
 
 def largest_contiguous_sub_sum(arr)
+    #O(n^2)
     sub_arrays = []
     arr.each_with_index do |el, i|
         arr.each_with_index do |el2, j|
@@ -33,6 +36,8 @@ def largest_contiguous_sub_sum(arr)
 end 
 
 def LCSS_Opt(arr)
+    #O(n)
+    #O(1) space
     debugger
     i=0
     j=0

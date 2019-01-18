@@ -1,4 +1,5 @@
 def first_anagram?(str1, str2)
+    #O(n!)
     sub_str = []
     str_arr = str1.split("")
     perm = str_arr.permutation(str1.length).to_a
@@ -14,6 +15,7 @@ def first_anagram?(str1, str2)
 end 
 
 def second_anagram?(str1,str2)
+    #O(n^2)
     str1.each_char do |char|
         if str2.index(char)
             str2.delete!(char)
@@ -23,10 +25,12 @@ def second_anagram?(str1,str2)
 end 
 
 def third_anagram?(str1, str2)
+    #O(nlog(n))???
     str1.split("").sort == str2.split("").sort
 end 
 
 def fourth_anagram?(str1, str2)
+    #O(n)
     hash = Hash.new(0)
     str1.each_char {|ch| hash[ch] += 1 }
     str2.each_char {|ch| hash[ch] += 1 }
